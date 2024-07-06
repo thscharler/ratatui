@@ -602,15 +602,13 @@ impl Scrollbar<'_> {
 impl ScrollbarOrientation {
     /// Returns `true` if the scrollbar is vertical.
     #[must_use = "returns the requested kind of the scrollbar"]
-    #[allow(clippy::trivially_copy_pass_by_ref)]
-    pub const fn is_vertical(&self) -> bool {
+    pub const fn is_vertical(self) -> bool {
         matches!(self, Self::VerticalRight | Self::VerticalLeft)
     }
 
     /// Returns `true` if the scrollbar is horizontal.
     #[must_use = "returns the requested kind of the scrollbar"]
-    #[allow(clippy::trivially_copy_pass_by_ref)]
-    pub const fn is_horizontal(&self) -> bool {
+    pub const fn is_horizontal(self) -> bool {
         matches!(self, Self::HorizontalBottom | Self::HorizontalTop)
     }
 }
