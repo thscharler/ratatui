@@ -1,6 +1,6 @@
 [package]
 name = "ratatui"
-version = "0.26.3" # crate version
+version = "0.27.0" # crate version
 authors = ["Florian Dehau <work@fdehau.com>", "The Ratatui Developers"]
 description = "A library that's all about cooking up terminal user interfaces"
 documentation = "https://docs.rs/ratatui/latest/ratatui/"
@@ -30,12 +30,12 @@ cassowary = "0.3"
 compact_str = "0.7.1"
 crossterm = { version = "0.27", optional = true }
 document-features = { version = "0.2.7", optional = true }
+instability = "0.3.1"
 itertools = "0.13"
 lru = "0.12.0"
 paste = "1.0.2"
 palette = { version = "0.7.6", optional = true }
 serde = { version = "1", optional = true, features = ["derive"] }
-stability = "0.2.0"
 strum = { version = "0.26", features = ["derive"] }
 strum_macros = { version = "0.26.3" }
 termion = { version = "4.0.0", optional = true }
@@ -61,6 +61,9 @@ rand = "0.8.5"
 rand_chacha = "0.3.1"
 rstest = "0.21.0"
 serde_json = "1.0.109"
+tracing = "0.1.40"
+tracing-appender = "0.2.3"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 
 [lints.rust]
 unsafe_code = "forbid"
@@ -292,6 +295,11 @@ required-features = ["crossterm"]
 doc-scrape-examples = true
 
 [[example]]
+name = "hyperlink"
+required-features = ["crossterm", "unstable-widget-ref"]
+doc-scrape-examples = true
+
+[[example]]
 name = "list"
 required-features = ["crossterm"]
 doc-scrape-examples = true
@@ -345,6 +353,11 @@ doc-scrape-examples = true
 
 [[example]]
 name = "tabs"
+required-features = ["crossterm"]
+doc-scrape-examples = true
+
+[[example]]
+name = "tracing"
 required-features = ["crossterm"]
 doc-scrape-examples = true
 
